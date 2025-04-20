@@ -1,0 +1,22 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /
+
+	# Allow access to the following directories
+	RewriteRule ^(./docs)($|/) - [L]
+
+	# Allow access to (robots.)txt files
+	RewriteRule ^(robots\.txt)$ - [L]
+
+	# Allow access to JavaScript files
+	RewriteCond %{REQUEST_URI} \.js$ [NC]
+	RewriteRule ^ - [L]
+
+	RewriteRule ^index\.php$ - [L]
+
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{DOCUMENT_ROOT}/index.php !-f
+
+	RewriteRule . /index.php [L]
+</IfModule>
