@@ -9,13 +9,8 @@ Try it out:
 ```bash
 php -S 127.0.0.1:80
 ```
-```
-```
-```
-```
-```
-```
-```
+
+Then visit any page with a GET client like [xh](https://github.com/ducaale/xh) or [curl](https://curl.se/) to see the server-side rendering in action. For example: `xh "127.0.0.1:80/de/index"` will render the german index page.
 
 ## Features
 
